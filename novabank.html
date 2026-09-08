@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaBank — Digital Banking</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #14213d;
+      line-height: 1.5;
+    }
+    header {
+      background: #0b1f3a;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo { font-size: 25px; font-weight: 800; }
+    nav { display: flex; gap: 24px; }
+    nav a { color: white; text-decoration: none; font-size: 14px; }
+    .login {
+      border: 1px solid #fff;
+      padding: 9px 18px;
+      border-radius: 8px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #0b1f3a, #1769aa);
+      color: white;
+      padding: 75px 7%;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero h1 { font-size: 48px; line-height: 1.1; margin-bottom: 18px; }
+    .hero p { max-width: 560px; color: #dcecff; margin-bottom: 28px; }
+    .cta {
+      display: inline-block;
+      background: #fff;
+      color: #0b1f3a;
+      padding: 13px 22px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .bank-card {
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 20px;
+      padding: 28px;
+      min-height: 210px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.15);
+    }
+    .bank-card .chip {
+      width: 48px; height: 36px;
+      background: #e6c76a;
+      border-radius: 7px;
+      margin-bottom: 55px;
+    }
+    .card-number { font-size: 22px; letter-spacing: 3px; }
+    .card-bottom { display: flex; justify-content: space-between; margin-top: 20px; font-size: 12px; }
+    .section { padding: 55px 7%; }
+    .section h2 { text-align: center; font-size: 30px; margin-bottom: 32px; }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .feature, .account, .transfer, .contact {
+      background: white;
+      border-radius: 15px;
+      padding: 24px;
+      box-shadow: 0 8px 25px rgba(15,35,60,.08);
+    }
+    .feature h3 { margin: 12px 0 7px; }
+    .icon { font-size: 32px; }
+    .dashboard {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    .balance {
+      background: #0b1f3a;
+      color: white;
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .balance .amount { font-size: 38px; margin: 10px 0 20px; }
+    .transaction {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 0;
+      border-bottom: 1px solid #e7edf5;
+    }
+    .positive { color: #14804a; }
+    .negative { color: #c0392b; }
+    form { display: grid; gap: 14px; }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccd6e3;
+      border-radius: 8px;
+      font: inherit;
+    }
+    button {
+      border: 0;
+      padding: 13px;
+      border-radius: 8px;
+      background: #1769aa;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    footer {
+      background: #0b1f3a;
+      color: #cbd7e6;
+      padding: 28px 7%;
+      text-align: center;
+    }
+    @media (max-width: 850px) {
+      .hero, .dashboard { grid-template-columns: 1fr; }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      nav { display: none; }
+      .hero h1 { font-size: 38px; }
+    }
+    @media (max-width: 520px) {
+      .features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🏦 NovaBank</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#dashboard">My Account</a>
+    <a href="#contact">Contact</a>
+    <a class="login" href="#login">Login</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <h1>Banking made simple.</h1>
+    <p>Manage your money, transfer funds, track spending, and reach your financial goals from one secure digital banking experience.</p>
+    <a class="cta" href="#dashboard">View My Account</a>
+  </div>
+  <div class="bank-card">
+    <div class="chip"></div>
+    <div class="card-number">••••  ••••  ••••  4821</div>
+    <div class="card-bottom">
+      <span>NOVA BANK</span>
+      <span>VALID 09/29</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <h2>Banking services</h2>
+  <div class="features">
+    <div class="feature">
+      <div class="icon">💳</div>
+      <h3>Cards</h3>
+      <p>Manage debit and credit cards and monitor transactions.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">💸</div>
+      <h3>Transfers</h3>
+      <p>Send money quickly between your accounts or to others.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">📈</div>
+      <h3>Investments</h3>
+      <p>Keep track of your investments and financial progress.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🔒</div>
+      <h3>Security</h3>
+      <p>Secure login and account monitoring for safer banking.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="dashboard">
+  <h2>Account overview</h2>
+  <div class="dashboard">
+    <div class="balance">
+      <p>Available balance</p>
+      <div class="amount">₹1,24,580.00</div>
+      <p>**** 4821 &nbsp; • &nbsp; Savings Account</p>
+    </div>
+
+    <div class="account">
+      <h3>Recent transactions</h3>
+      <div class="transaction">
+        <span>Salary Credit</span><span class="positive">+ ₹75,000</span>
+      </div>
+      <div class="transaction">
+        <span>Electricity Bill</span><span class="negative">- ₹2,450</span>
+      </div>
+      <div class="transaction">
+        <span>Online Shopping</span><span class="negative">- ₹3,200</span>
+      </div>
+      <div class="transaction">
+        <span>Interest Credit</span><span class="positive">+ ₹850</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Quick transfer</h2>
+  <div class="transfer">
+    <form id="transferForm">
+      <input type="text" id="recipient" placeholder="Recipient name" required />
+      <input type="text" id="account" placeholder="Account number" required />
+      <input type="number" id="amount" placeholder="Amount (₹)" min="1" required />
+      <button type="submit">Transfer Money</button>
+    </form>
+    <p id="transferMessage" style="margin-top:15px;"></p>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact NovaBank</h2>
+  <div class="contact">
+    <form id="contactForm">
+      <input type="text" placeholder="Your name" required />
+      <input type="email" placeholder="Email address" required />
+      <textarea rows="4" placeholder="How can we help?" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="contactMessage" style="margin-top:15px;"></p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 NovaBank. Demo website for learning purposes only.</p>
+</footer>
+
+<script>
+  document.getElementById("transferForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const name = document.getElementById("recipient").value;
+    const amount = document.getElementById("amount").value;
+    document.getElementById("transferMessage").textContent =
+      `Demo transfer of ₹${Number(amount).toLocaleString("en-IN")} to ${name} submitted successfully.`;
+    this.reset();
+  });
+
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("contactMessage").textContent =
+      "Thank you! Your demo support request has been submitted.";
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
